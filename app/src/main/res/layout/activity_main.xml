@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/resTextLayout"
+        android:layout_below="@id/reqButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/passLayout">
+        <TextView
+            android:id="@+id/resText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Response message will be here!"
+            app:layout_constraintTop_toBottomOf="@id/reqButton"
+            app:layout_constraintStart_toStartOf="@id/reqButton"/>
+    </ScrollView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:boxBackgroundColor="@android:color/transparent"
+        android:background="@android:color/transparent"
+        android:id="@+id/urlLayout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/reqButton"
+        app:layout_constraintBottom_toBottomOf="@id/reqButton">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/urlText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="url"
+            android:text="http://172.20.10.4:3000"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:boxBackgroundColor="@android:color/transparent"
+        android:background="@android:color/transparent"
+        android:id="@+id/accountLayout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/reqButton"
+        app:layout_constraintTop_toBottomOf="@id/urlLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/accountText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="account"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:boxBackgroundColor="@android:color/transparent"
+        android:background="@android:color/transparent"
+        android:id="@+id/passLayout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/reqButton"
+        app:layout_constraintTop_toBottomOf="@id/accountLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="password"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/reqButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="httpRequest"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/jsonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="findUser"
+        app:layout_constraintTop_toBottomOf="@id/jsonHttpButton"
+        app:layout_constraintStart_toStartOf="@id/reqButton" />
+
+
+    <Button
+        android:textAllCaps="false"
+        android:id="@+id/jsonHttpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="addUser"
+        app:layout_constraintTop_toBottomOf="@id/reqButton"
+        app:layout_constraintStart_toStartOf="@id/jsonButton"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
