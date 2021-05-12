@@ -87,7 +87,7 @@
         android:id="@+id/jsonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="findUser"
+        android:text="listUser"
         app:layout_constraintTop_toBottomOf="@id/jsonHttpButton"
         app:layout_constraintStart_toStartOf="@id/reqButton" />
 

@@ -1,6 +1,5 @@
 package com.example.httptest
 
-import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -11,16 +10,6 @@ import com.google.gson.reflect.TypeToken
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
-import java.util.concurrent.Executors
-
-class JsonData {
-    @SerializedName("Name")
-    var name: String? = null
-    @SerializedName("City")
-    var city: String? = null
-    @SerializedName("Country")
-    var country: String? = null
-}
 
 class UserData {
     @SerializedName("account")
@@ -30,10 +19,6 @@ class UserData {
     @SerializedName("id")
     var id: Int? = null
 }
-
-//data class UserJsonData (
-//    var account: String? = null,
-//    var pass: String? = null) {}
 
 
 class MainActivity : AppCompatActivity() {
@@ -90,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
         val client = OkHttpClient()
         val request = Request.Builder()
-                .url("$url/users/find").get().build()
+                .url("$url/users/list").get().build()
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -135,7 +120,7 @@ class MainActivity : AppCompatActivity() {
         val jsonObjectString = jsonObject.toString()
         val requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonObjectString)
 
-        Toast.makeText(this, requestBody.toString(), Toast.LENGTH_LONG).show()
+//        Toast.makeText(this, requestBody.toString(), Toast.LENGTH_LONG).show()
 
 
         val client = OkHttpClient()
